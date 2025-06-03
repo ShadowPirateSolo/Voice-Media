@@ -1,3 +1,4 @@
+print('Импорт библиотек...')
 import asyncio
 import os
 from dotenv import load_dotenv
@@ -14,6 +15,7 @@ import speech_recognition as sr
 import platform
 from setup_ffmpeg import setup_ffmpeg
 
+print('Установка ffmpeg...')
 setup_ffmpeg()
 if platform.system() == 'Windows':
     os.environ["FFMPEG_BINARY"] = os.path.join("bin", "ffmpeg.exe")
@@ -751,5 +753,5 @@ async def main():
 
 
 if __name__ == '__main__':
-    print('Бот запущен')
+    print('Бот запущен.')
     asyncio.run(main())
