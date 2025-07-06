@@ -1,7 +1,5 @@
-print('Импорт библиотек...')
 import asyncio
 import os
-from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, BotCommand, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, FSInputFile
 from aiogram.types import BufferedInputFile
@@ -15,7 +13,6 @@ import speech_recognition as sr
 import platform
 from setup_ffmpeg import setup_ffmpeg
 
-print('Установка ffmpeg...')
 setup_ffmpeg()
 if platform.system() == 'Windows':
     os.environ["FFMPEG_BINARY"] = os.path.join("bin", "ffmpeg.exe")
@@ -37,9 +34,8 @@ user_photos = {}
 user_audios = {}
 user_videos = {}
 
-load_dotenv()
-token = os.getenv('token')
-admin_username = os.getenv('admin_username')
+token = 'YOUR_BOT_TOKEN'
+admin_username = 'ADMIN_TELERGAM_USERNAME'
 bot = Bot(token=token)
 
 dp = Dispatcher()
